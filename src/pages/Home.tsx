@@ -35,7 +35,7 @@ const Home = () => {
               </Button>
             </Link>
             <a href="tel:520-476-2292">
-              <Button size="lg" variant="outline" className="text-lg px-8 border-white text-white hover:bg-white hover:text-primary">
+              <Button size="lg" variant="outline" className="text-lg px-8 bg-white border-white text-primary hover:bg-white/90">
                 Call 520-476-2292
               </Button>
             </a>
