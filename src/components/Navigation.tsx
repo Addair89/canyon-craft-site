@@ -1,0 +1,58 @@
+import { Link, useLocation } from "react-router-dom";
+import { Phone } from "lucide-react";
+import { Button } from "@/components/ui/button";
+
+const Navigation = () => {
+  const location = useLocation();
+  
+  const isActive = (path: string) => location.pathname === path;
+  
+  return (
+    <nav className="fixed top-0 left-0 right-0 z-50 bg-background/95 backdrop-blur-sm border-b border-border">
+      <div className="container mx-auto px-6 py-4">
+        <div className="flex items-center justify-between">
+          <Link to="/" className="flex flex-col">
+            <span className="text-2xl font-heading font-semibold tracking-tight">Diamond Canyon</span>
+            <span className="text-xs text-muted-foreground tracking-wider">PAINTING</span>
+          </Link>
+          
+          <div className="hidden md:flex items-center gap-8">
+            <Link 
+              to="/" 
+              className={`text-sm transition-colors ${isActive('/') ? 'text-foreground font-medium' : 'text-muted-foreground hover:text-foreground'}`}
+            >
+              Home
+            </Link>
+            <Link 
+              to="/about" 
+              className={`text-sm transition-colors ${isActive('/about') ? 'text-foreground font-medium' : 'text-muted-foreground hover:text-foreground'}`}
+            >
+              About
+            </Link>
+            <Link 
+              to="/services" 
+              className={`text-sm transition-colors ${isActive('/services') ? 'text-foreground font-medium' : 'text-muted-foreground hover:text-foreground'}`}
+            >
+              Services
+            </Link>
+            <Link 
+              to="/contact" 
+              className={`text-sm transition-colors ${isActive('/contact') ? 'text-foreground font-medium' : 'text-muted-foreground hover:text-foreground'}`}
+            >
+              Contact
+            </Link>
+          </div>
+          
+          <a href="tel:520-476-2292">
+            <Button variant="default" size="sm" className="bg-accent hover:bg-accent/90 text-accent-foreground">
+              <Phone className="w-4 h-4 mr-2" />
+              520-476-2292
+            </Button>
+          </a>
+        </div>
+      </div>
+    </nav>
+  );
+};
+
+export default Navigation;
