@@ -22,13 +22,10 @@ const About = () => {
               <h2 className="text-4xl font-heading font-bold mb-6">Our Story</h2>
               <div className="space-y-4 text-muted-foreground leading-relaxed">
                 <p>
-                  Diamond Canyon Painting was founded on a simple belief: your home deserves more than just paint on walls. It deserves artistry, precision, and a commitment to excellence that shows in every brushstroke.
+                  At Diamond Canyon Painting, we bring over a decade of experience delivering high-end painting services and premium finishes throughout Southern Arizona. Our team of skilled professionals is dedicated to providing exceptional craftsmanship, attention to detail, and superior customer service on every project — from luxury homes to commercial properties.
                 </p>
                 <p>
-                  Serving Tucson and the surrounding Southern Arizona communities, we specialize in luxury residential and select commercial projects where quality is paramount. Our team brings decades of combined experience in high-end finishes, custom applications, and the kind of meticulous prep work that separates a good paint job from an exceptional one.
-                </p>
-                <p>
-                  We've built our reputation on trust, transparency, and results that exceed expectations. When you choose Diamond Canyon, you're choosing a partner who treats your property with the same care and respect we'd give our own.
+                  We specialize in interior and exterior painting, custom finishes, color consulting and surface preparation that ensures lasting beauty and durability. Whether you're transforming a single room or an entire property, we offer professional guidance to help you achieve a flawless result that reflects your vision and style.
                 </p>
               </div>
             </div>
