@@ -17,11 +17,11 @@ const Contact = () => {
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    
+
     // w3forms will be configured by the user later
     // For now, just show a success message
     toast.success("Thank you! We'll be in touch within 24 hours.");
-    
+
     // Reset form
     setFormData({
       name: "",
@@ -31,7 +31,9 @@ const Contact = () => {
     });
   };
 
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+  const handleChange = (
+    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
+  ) => {
     setFormData({
       ...formData,
       [e.target.name]: e.target.value,
@@ -41,11 +43,22 @@ const Contact = () => {
   return (
     <div className="min-h-screen pt-24">
       {/* Hero */}
-      <section className="py-16 bg-muted/30">
+      <section
+        className="py-20 bg-secondary/8 " /* Example Tailwind inline style usage */
+        style={{
+          backgroundImage:
+            "linear-gradient(180deg, rgba(0,0,0,0.1), transparent)",
+        }}
+      >
         <div className="container mx-auto px-6 text-center">
-          <h1 className="text-5xl md:text-6xl font-heading font-bold mb-6">Contact Us</h1>
+          <h1 className="text-5xl md:text-6xl font-heading font-bold mb-6">
+            Contact Us
+          </h1>
+          {/* slim accent rule to add visual anchor */}
+          <div className="mx-auto h-1 w-20 bg-accent rounded mb-6 opacity-90" />
           <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
-            Let's discuss your project and create a custom mockup that brings your vision to life.
+            Let's discuss your project and create a custom mockup that brings
+            your vision to life.
           </p>
         </div>
       </section>
@@ -55,7 +68,9 @@ const Contact = () => {
           <div className="grid md:grid-cols-2 gap-16">
             {/* Contact Form */}
             <div>
-              <h2 className="text-3xl font-heading font-bold mb-8">Request Your Free Luxury Mockup</h2>
+              <h2 className="text-3xl font-heading font-bold mb-8">
+                Request Your Free Luxury Mockup
+              </h2>
               <form onSubmit={handleSubmit} className="space-y-6">
                 <div>
                   <Label htmlFor="name">Name *</Label>
@@ -66,7 +81,7 @@ const Contact = () => {
                     required
                     value={formData.name}
                     onChange={handleChange}
-                    className="mt-2"
+                    className="mt-2 bg-card"
                   />
                 </div>
 
@@ -79,7 +94,7 @@ const Contact = () => {
                     required
                     value={formData.email}
                     onChange={handleChange}
-                    className="mt-2"
+                    className="mt-2 bg-card"
                   />
                 </div>
 
@@ -92,7 +107,7 @@ const Contact = () => {
                     required
                     value={formData.phone}
                     onChange={handleChange}
-                    className="mt-2"
+                    className="mt-2 bg-card"
                   />
                 </div>
 
@@ -105,35 +120,47 @@ const Contact = () => {
                     value={formData.message}
                     onChange={handleChange}
                     rows={6}
-                    className="mt-2"
+                    className="mt-2 bg-card"
                     placeholder="Interior or exterior? Square footage? Any special finishes you're interested in?"
                   />
                 </div>
 
-                <Button type="submit" size="lg" className="w-full bg-accent hover:bg-accent/90 text-accent-foreground">
+                <Button
+                  type="submit"
+                  size="lg"
+                  className="w-full bg-accent hover:bg-accent/90 text-accent-foreground"
+                >
                   Send Message
                 </Button>
 
                 <p className="text-xs text-muted-foreground">
-                  By submitting this form, you agree to be contacted regarding your project inquiry.
+                  By submitting this form, you agree to be contacted regarding
+                  your project inquiry.
                 </p>
               </form>
             </div>
 
             {/* Contact Info */}
             <div>
-              <h2 className="text-3xl font-heading font-bold mb-8">Get in Touch</h2>
-              
+              <h2 className="text-3xl font-heading font-bold mb-8">
+                Get in Touch
+              </h2>
+
               <div className="space-y-6 mb-12">
                 <Card className="p-6">
                   <div className="flex items-start gap-4">
                     <Phone className="w-6 h-6 text-accent flex-shrink-0 mt-1" />
                     <div>
                       <h3 className="font-semibold mb-1">Phone</h3>
-                      <a href="tel:520-476-2292" className="text-muted-foreground hover:text-accent transition-colors">
+                      <a
+                        href="tel:520-476-2292"
+                        className="text-muted-foreground hover:text-accent transition-colors"
+                      >
                         520-476-2292
                       </a>
-                      <p className="text-sm text-muted-foreground mt-1">Mon-Fri: 7am - 6pm</p>
+                      <p className="text-sm text-muted-foreground mt-1">
+                        Mon-Fri: 7am - 6pm
+                      </p>
                     </div>
                   </div>
                 </Card>
@@ -143,10 +170,15 @@ const Contact = () => {
                     <Mail className="w-6 h-6 text-accent flex-shrink-0 mt-1" />
                     <div>
                       <h3 className="font-semibold mb-1">Email</h3>
-                      <a href="mailto:diamondcanyonpainting@gmail.com" className="text-muted-foreground hover:text-accent transition-colors break-all">
+                      <a
+                        href="mailto:diamondcanyonpainting@gmail.com"
+                        className="text-muted-foreground hover:text-accent transition-colors break-all"
+                      >
                         diamondcanyonpainting@gmail.com
                       </a>
-                      <p className="text-sm text-muted-foreground mt-1">We respond within 24 hours</p>
+                      <p className="text-sm text-muted-foreground mt-1">
+                        We respond within 24 hours
+                      </p>
                     </div>
                   </div>
                 </Card>
@@ -156,8 +188,12 @@ const Contact = () => {
                     <MapPin className="w-6 h-6 text-accent flex-shrink-0 mt-1" />
                     <div>
                       <h3 className="font-semibold mb-1">Service Area</h3>
-                      <p className="text-muted-foreground">Tucson & Southern Arizona</p>
-                      <p className="text-sm text-muted-foreground mt-1">Including Oro Valley, Marana, Vail, Sahuarita</p>
+                      <p className="text-muted-foreground">
+                        Tucson & Southern Arizona
+                      </p>
+                      <p className="text-sm text-muted-foreground mt-1">
+                        Including Oro Valley, Marana, Vail, Sahuarita
+                      </p>
                     </div>
                   </div>
                 </Card>
@@ -178,10 +214,14 @@ const Contact = () => {
               </div>
 
               <div className="bg-muted/50 p-6 rounded-lg">
-                <h3 className="font-heading font-semibold mb-3">Licensed & Insured</h3>
+                <h3 className="font-heading font-semibold mb-3">
+                  Licensed & Insured
+                </h3>
                 <p className="text-sm text-muted-foreground">
-                  Arizona ROC #361743<br />
-                  General Liability Insurance<br />
+                  Arizona ROC #361743
+                  <br />
+                  General Liability Insurance
+                  <br />
                   Workers' Compensation Coverage
                 </p>
               </div>
