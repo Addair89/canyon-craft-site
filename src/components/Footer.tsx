@@ -1,4 +1,5 @@
 import { Mail, Phone, MapPin } from "lucide-react";
+import logo from "@/assets/logo.png";
 
 const Footer = () => {
   return (
@@ -6,7 +7,13 @@ const Footer = () => {
       <div className="container mx-auto px-6 py-12">
         <div className="grid md:grid-cols-3 gap-12">
           <div>
-            <h3 className="text-xl font-heading font-semibold mb-4">Diamond Canyon Painting</h3>
+            <div className="flex items-center gap-3 mb-4">
+              <img src={logo} alt="Diamond Canyon Painting Logo" className="h-16 w-auto" />
+              <div className="flex flex-col">
+                <h3 className="text-xl font-heading font-semibold">Diamond Canyon</h3>
+                <span className="text-xs tracking-wider">PAINTING</span>
+              </div>
+            </div>
             <p className="text-sm text-primary-foreground/80 mb-4">
               Luxury painting services for discerning homeowners and commercial properties in Southern Arizona.
             </p>

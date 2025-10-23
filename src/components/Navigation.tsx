@@ -1,6 +1,7 @@
 import { Link, useLocation } from "react-router-dom";
 import { Phone } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import logo from "@/assets/logo.png";
 
 const Navigation = () => {
   const location = useLocation();
@@ -11,9 +12,12 @@ const Navigation = () => {
     <nav className="fixed top-0 left-0 right-0 z-50 bg-background/95 backdrop-blur-sm border-b border-border">
       <div className="container mx-auto px-6 py-4">
         <div className="flex items-center justify-between">
-          <Link to="/" className="flex flex-col">
-            <span className="text-2xl font-heading font-semibold tracking-tight">Diamond Canyon</span>
-            <span className="text-xs text-muted-foreground tracking-wider">PAINTING</span>
+          <Link to="/" className="flex items-center gap-3">
+            <img src={logo} alt="Diamond Canyon Painting Logo" className="h-12 w-auto" />
+            <div className="flex flex-col">
+              <span className="text-xl font-heading font-semibold tracking-tight">Diamond Canyon</span>
+              <span className="text-xs text-muted-foreground tracking-wider">PAINTING</span>
+            </div>
           </Link>
           
           <div className="hidden md:flex items-center gap-8">
