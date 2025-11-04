@@ -143,54 +143,60 @@ const Home = () => {
           </div>
 
           <div className="grid md:grid-cols-3 gap-8">
-            <Card className="overflow-hidden hover-lift cursor-pointer border-b-8 border-accent">
-              <img
-                src={detailImage}
-                alt="Interior trim detail"
-                className="w-full h-64 object-cover"
-              />
-              <div className="p-6">
-                <h3 className="font-heading font-semibold text-xl mb-2">
-                  Custom Trim & Molding
-                </h3>
-                <p className="text-muted-foreground">
-                  Precision brushwork on intricate architectural details
-                </p>
-              </div>
-            </Card>
+            <Link to="/services">
+              <Card className="overflow-hidden hover-lift cursor-pointer border-b-8 border-accent">
+                <img
+                  src={detailImage}
+                  alt="Interior trim detail"
+                  className="w-full h-64 object-cover"
+                />
+                <div className="p-6">
+                  <h3 className="font-heading font-semibold text-xl mb-2">
+                    Custom Trim & Molding
+                  </h3>
+                  <p className="text-muted-foreground">
+                    Precision brushwork on intricate architectural details
+                  </p>
+                </div>
+              </Card>
+            </Link>
 
-            <Card className="overflow-hidden hover-lift cursor-pointer border-b-8 border-accent">
-              <img
-                src={exteriorImage}
-                alt="Luxury exterior"
-                className="w-full h-64 object-cover"
-              />
-              <div className="p-6">
-                <h3 className="font-heading font-semibold text-xl mb-2">
-                  Desert Estate Exterior
-                </h3>
-                <p className="text-muted-foreground">
-                  Elegant stucco finish that complements the landscape
-                </p>
-              </div>
-            </Card>
+            <Link to="/services">
+              <Card className="overflow-hidden hover-lift cursor-pointer border-b-8 border-accent">
+                <img
+                  src={exteriorImage}
+                  alt="Luxury exterior"
+                  className="w-full h-64 object-cover"
+                />
+                <div className="p-6">
+                  <h3 className="font-heading font-semibold text-xl mb-2">
+                    Desert Estate Exterior
+                  </h3>
+                  <p className="text-muted-foreground">
+                    Elegant stucco finish that complements the landscape
+                  </p>
+                </div>
+              </Card>
+            </Link>
 
-            <Card className="overflow-hidden hover-lift cursor-pointer border-b-8 border-accent">
-              <img
-                src={customFinish}
-                alt="Interior custom finish"
-                className="w-full h-64 object-cover"
-              />
-              <div className="p-6">
-                <h3 className="font-heading font-semibold text-xl mb-2">
-                  Interior Custom Finishes
-                </h3>
-                <p className="text-muted-foreground">
-                  Hand-applied textures and finishes that add depth and style to
-                  your space
-                </p>
-              </div>
-            </Card>
+            <Link to="/services">
+              <Card className="overflow-hidden hover-lift cursor-pointer border-b-8 border-accent">
+                <img
+                  src={customFinish}
+                  alt="Interior custom finish"
+                  className="w-full h-64 object-cover"
+                />
+                <div className="p-6">
+                  <h3 className="font-heading font-semibold text-xl mb-2">
+                    Interior Custom Finishes
+                  </h3>
+                  <p className="text-muted-foreground">
+                    Hand-applied textures and finishes that add depth and style
+                    to your space
+                  </p>
+                </div>
+              </Card>
+            </Link>
           </div>
         </div>
       </section>
