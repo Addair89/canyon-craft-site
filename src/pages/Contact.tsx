@@ -220,6 +220,8 @@ const Contact = () => {
                 <p className="text-sm text-muted-foreground">
                   Arizona ROC #361743
                   <br />
+                  BBC Accredited Business
+                  <br />
                   General Liability Insurance
                   <br />
                   Workers' Compensation Coverage

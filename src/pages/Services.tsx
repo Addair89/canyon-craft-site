@@ -57,7 +57,7 @@ const Services = () => {
                 <div className="flex items-start gap-2">
                   <ArrowRight className="w-5 h-5 text-accent mt-0.5 flex-shrink-0" />
                   <p className="text-muted-foreground">
-                    Premium Sherwin-Williams & Benjamin Moore paints
+                    Professional-grade paints made to stand the test of time
                   </p>
                 </div>
                 <div className="flex items-start gap-2">
@@ -79,9 +79,9 @@ const Services = () => {
                   </p>
                 </div>
               </div>
-              <p className="text-sm text-muted-foreground italic">
+              {/* <p className="text-sm text-muted-foreground italic">
                 Recommended products: Emerald, Duration, Aura, Regal Select
-              </p>
+              </p> */}
             </div>
             <div className="order-1 md:order-2">
               <img
@@ -142,9 +142,9 @@ const Services = () => {
                   </p>
                 </div>
               </div>
-              <p className="text-sm text-muted-foreground italic">
+              {/* <p className="text-sm text-muted-foreground italic">
                 Recommended products: Duration Exterior, SuperPaint, Resilience
-              </p>
+              </p> */}
             </div>
           </div>
         </div>
@@ -158,20 +158,14 @@ const Services = () => {
               <div className="flex items-center gap-3 mb-6">
                 <Sparkles className="w-8 h-8 text-accent" />
                 <h2 className="text-4xl font-heading font-bold">
-                  Custom Finishes & Venetian Plaster
+                  Custom Decorative Finishes
                 </h2>
               </div>
               <p className="text-lg text-muted-foreground mb-6">
                 Elevate your interiors with hand-applied specialty finishes that
-                add depth, texture, and sophisticated visual interest.
+                add depth, texture, and a sophisticated touch to any space.
               </p>
               <div className="space-y-3 mb-8">
-                <div className="flex items-start gap-2">
-                  <ArrowRight className="w-5 h-5 text-accent mt-0.5 flex-shrink-0" />
-                  <p className="text-muted-foreground">
-                    Authentic Venetian plaster application
-                  </p>
-                </div>
                 <div className="flex items-start gap-2">
                   <ArrowRight className="w-5 h-5 text-accent mt-0.5 flex-shrink-0" />
                   <p className="text-muted-foreground">
@@ -187,13 +181,19 @@ const Services = () => {
                 <div className="flex items-start gap-2">
                   <ArrowRight className="w-5 h-5 text-accent mt-0.5 flex-shrink-0" />
                   <p className="text-muted-foreground">
+                    Faux finishes and creative paint techniques
+                  </p>
+                </div>
+                <div className="flex items-start gap-2">
+                  <ArrowRight className="w-5 h-5 text-accent mt-0.5 flex-shrink-0" />
+                  <p className="text-muted-foreground">
                     Custom color matching and tinting
                   </p>
                 </div>
               </div>
-              <p className="text-sm text-muted-foreground italic">
-                Perfect for dining rooms, entryways, and luxury master suites
-              </p>
+              {/* <p className="text-sm text-muted-foreground italic">
+                Perfect for dining rooms, entryways, and feature walls
+              </p> */}
             </div>
             <div className="order-1 md:order-2">
               <img

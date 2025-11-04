@@ -7,6 +7,7 @@ import detailImage from "@/assets/detail-trim.jpg";
 import exteriorImage from "@/assets/exterior-luxury.jpg";
 import customFinish from "@/assets/custom-finish.jpg";
 import { useEffect, useState } from "react";
+import bbbLogo from "@/assets/bbbLogo.svg";
 
 const Home = () => {
   const [offset, setOffset] = useState(0);
@@ -35,9 +36,10 @@ const Home = () => {
 
         {/* Content */}
         <div className="relative z-10 container mx-auto px-6 text-center text-white">
-          <p className="text-sm tracking-widest mb-6 text-white/80">
-            ARIZONA ROC #361743 • INSURED & BONDED
+          <p className="text-sm tracking-widest mb-6 text-white/80 flex items-center justify-center gap-3 flex-wrap">
+            <span>ARIZONA ROC #361743 • INSURED & BONDED • BBB ACCREDITED</span>
           </p>
+
           <h1 className="text-5xl md:text-7xl font-heading font-bold mb-6 text-balance">
             Luxury Painting.
             <br />
@@ -66,6 +68,16 @@ const Home = () => {
               </Button>
             </a>
           </div>
+          {/* <div className="mt-8 flex flex-col items-center justify-center gap-2">
+            <div className="flex items-center gap-2">
+              <img
+                src={bbbLogo}
+                alt="BBB Accredited Business"
+                className="h-6 opacity-90"
+              />
+              <p className="text-sm text-white/70">BBB Accredited Business</p>
+            </div>
+          </div> */}
         </div>
       </section>
 
@@ -81,8 +93,8 @@ const Home = () => {
                 Premium Materials
               </h3>
               <p className="text-muted-foreground">
-                We exclusively use top-tier paints and finishes from
-                Sherwin-Williams and Benjamin Moore for lasting beauty.
+                Beautiful results start with high-quality paints and materials
+                that last.
               </p>
             </div>
 
@@ -166,15 +178,16 @@ const Home = () => {
             <Card className="overflow-hidden hover-lift cursor-pointer border-b-8 border-accent">
               <img
                 src={customFinish}
-                alt="Venetian plaster"
+                alt="Interior custom finish"
                 className="w-full h-64 object-cover"
               />
               <div className="p-6">
                 <h3 className="font-heading font-semibold text-xl mb-2">
-                  Venetian Plaster
+                  Interior Custom Finishes
                 </h3>
                 <p className="text-muted-foreground">
-                  Hand-applied custom finish with subtle luminosity
+                  Hand-applied textures and finishes that add depth and style to
+                  your space
                 </p>
               </div>
             </Card>

@@ -1,11 +1,13 @@
 import { Mail, Phone, MapPin } from "lucide-react";
 import logo from "@/assets/logo.png";
+import bbbLogo from "@/assets/bbbLogo.svg";
 
 const Footer = () => {
   return (
     <footer className="bg-primary text-primary-foreground">
       <div className="container mx-auto px-6 py-12">
         <div className="grid md:grid-cols-3 gap-12">
+          {/* Logo + Description */}
           <div>
             <div className="flex items-center gap-3 mb-4">
               <img
@@ -13,22 +15,36 @@ const Footer = () => {
                 alt="Diamond Canyon Painting Logo"
                 className="h-16 w-auto bg-background"
               />
+
               <div className="flex flex-col">
                 <h3 className="text-xl font-heading font-semibold">
                   Diamond Canyon
                 </h3>
                 <span className="text-xs tracking-wider">PAINTING</span>
               </div>
+              <a
+                href="https://www.bbb.org/us/az/tucson/profile/painting-contractors/diamond-canyon-painting-llc-1286-20127688/#sealclick"
+                id="bbblink"
+                target="_blank"
+                rel="nofollow"
+              >
+                <img
+                  src={bbbLogo}
+                  className="h-10 w-auto"
+                  alt="Diamond Canyon Painting, LLC BBB Business Review"
+                />
+              </a>
             </div>
             <p className="text-sm text-primary-foreground/80 mb-4">
               Luxury painting services for discerning homeowners and commercial
               properties in Southern Arizona.
             </p>
             <p className="text-xs text-primary-foreground/60">
-              Arizona ROC #361743 • Insured & Bonded
+              ARIZONA ROC #361743 • INSURED & BONDED • BBB ACCREDITED
             </p>
           </div>
 
+          {/* Contact Info */}
           <div>
             <h4 className="text-sm font-semibold mb-4 uppercase tracking-wider">
               Contact
@@ -55,6 +71,7 @@ const Footer = () => {
             </div>
           </div>
 
+          {/* Hours */}
           <div>
             <h4 className="text-sm font-semibold mb-4 uppercase tracking-wider">
               Hours
@@ -67,7 +84,8 @@ const Footer = () => {
           </div>
         </div>
 
-        <div className="mt-12 pt-8 border-t border-primary-foreground/20 text-center text-sm text-primary-foreground/60">
+        {/* Copyright */}
+        <div className="mt-8 pt-8 border-t border-primary-foreground/20 text-center text-sm text-primary-foreground/60">
           <p>
             &copy; {new Date().getFullYear()} Diamond Canyon Painting. All
             rights reserved.

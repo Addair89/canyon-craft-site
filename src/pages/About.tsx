@@ -1,5 +1,6 @@
 import { Shield, Award, Users, Heart } from "lucide-react";
 import teamPhoto from "@/assets/team-photo.jpg";
+import bbbLogo from "@/assets/bbbLogo.svg";
 
 const About = () => {
   return (
@@ -78,6 +79,7 @@ const About = () => {
       </section>
 
       {/* Credentials */}
+      {/* Credentials */}
       <section className="py-24 bg-muted/30">
         <div className="container mx-auto px-6">
           <div className="text-center mb-12">
@@ -85,7 +87,6 @@ const About = () => {
               Licensed, Insured, Trusted
             </h2>
 
-            {/* tiny accent rule */}
             <div className="mx-auto h-0.5 w-20 bg-accent rounded mb-4" />
 
             <p className="text-lg text-muted-foreground">
@@ -93,7 +94,8 @@ const About = () => {
             </p>
           </div>
 
-          <div className="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+          <div className="grid md:grid-cols-3 gap-8 max-w-5xl mx-auto">
+            {/* Existing Licensed & Bonded Card */}
             <div className="bg-background p-8 rounded-lg shadow-sm ring-1 ring-black/5 border-l-4 border-accent transform transition-transform hover:-translate-y-1">
               <div className="inline-flex items-center justify-center w-12 h-12 rounded-full bg-accent/10 text-accent mb-4">
                 <Shield className="w-6 h-6" />
@@ -108,7 +110,8 @@ const About = () => {
               </p>
             </div>
 
-            <div className="bg-background p-8 rounded-lg shadow-sm ring-1 ring-black/5 border-l-4 border-accent transform transition-transform hover:-translate-y-1 ">
+            {/* Existing Insurance Card */}
+            <div className="bg-background p-8 rounded-lg shadow-sm ring-1 ring-black/5 border-l-4 border-accent transform transition-transform hover:-translate-y-1">
               <div className="inline-flex items-center justify-center w-12 h-12 rounded-full bg-accent/10 text-accent mb-4">
                 <Award className="w-6 h-6" />
               </div>
@@ -122,6 +125,29 @@ const About = () => {
                 Full coverage protects your property and our team, giving you
                 complete peace of mind.
               </p>
+            </div>
+
+            {/* New BBB Accreditation Card */}
+            <div className="bg-background p-8 rounded-lg shadow-sm ring-1 ring-black/5 border-l-4 border-accent transform transition-transform hover:-translate-y-1">
+              <div className="inline-flex items-center justify-center w-12 h-12 rounded-full bg-accent/10 text-accent mb-4">
+                <img src={bbbLogo} alt="BBB Accredited" className="w-6 h-6" />
+              </div>
+              <h3 className="text-xl font-heading font-semibold mb-2">
+                BBB Accredited
+              </h3>
+              <p className="text-sm text-muted-foreground">
+                Diamond Canyon Painting is a proud BBB Accredited Business,
+                committed to trust, integrity, and customer satisfaction.
+              </p>
+              <span className="text-sm text-accent font-medium mt-2 inline-block">
+                <a
+                  href="https://www.bbb.org/us/az/tucson/profile/painting-contractors/diamond-canyon-painting-llc-1286-20127688/#sealclick"
+                  target="_blank"
+                  rel="nofollow"
+                >
+                  View our BBB Profile
+                </a>
+              </span>
             </div>
           </div>
         </div>
