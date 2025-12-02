@@ -1,4 +1,4 @@
-import { useState } from "react";
+import React, { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
@@ -6,6 +6,7 @@ import { Label } from "@/components/ui/label";
 import { Card } from "@/components/ui/card";
 import { Mail, Phone, MapPin, Clock } from "lucide-react";
 import { toast } from "sonner";
+import HearthLogo from "@/assets/HearthLogo.png";
 
 const Contact = () => {
   const [formData, setFormData] = useState({
@@ -15,20 +16,46 @@ const Contact = () => {
     message: "",
   });
 
-  const handleSubmit = async (e: React.FormEvent) => {
+  const [loading, setLoading] = useState(false);
+
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
+    setLoading(true);
 
-    // w3forms will be configured by the user later
-    // For now, just show a success message
-    toast.success("Thank you! We'll be in touch within 24 hours.");
+    try {
+      // Build FormData from the form element (matches Web3Forms example)
+      const form = e.currentTarget;
+      const payload = new FormData(form);
 
-    // Reset form
-    setFormData({
-      name: "",
-      email: "",
-      phone: "",
-      message: "",
-    });
+      // IMPORTANT: replace this with the real key when you get it
+      payload.append("access_key", "YOUR_ACCESS_KEY_HERE");
+
+      const res = await fetch("https://api.web3forms.com/submit", {
+        method: "POST",
+        body: payload,
+      });
+
+      const data = await res.json();
+
+      if (data.success) {
+        toast.success("Thank you! We'll be in touch within 24 hours.");
+        // clear controlled inputs
+        setFormData({ name: "", email: "", phone: "", message: "" });
+        // also reset the native form (optional but safe)
+        form.reset();
+      } else {
+        console.error("Web3Forms error:", data);
+        toast.error(
+          data.message ||
+            "Something went wrong submitting the form. Please try again."
+        );
+      }
+    } catch (err) {
+      console.error("Submission error:", err);
+      toast.error("There was an error sending your message. Please try again.");
+    } finally {
+      setLoading(false);
+    }
   };
 
   const handleChange = (
@@ -44,7 +71,7 @@ const Contact = () => {
     <div className="min-h-screen pt-24">
       {/* Hero */}
       <section
-        className="py-20 bg-secondary/8 " /* Example Tailwind inline style usage */
+        className="py-20 bg-secondary/8"
         style={{
           backgroundImage:
             "linear-gradient(180deg, rgba(0,0,0,0.1), transparent)",
@@ -54,7 +81,6 @@ const Contact = () => {
           <h1 className="text-5xl md:text-6xl font-heading font-bold mb-6">
             Contact Us
           </h1>
-          {/* slim accent rule to add visual anchor */}
           <div className="mx-auto h-1 w-20 bg-accent rounded mb-6 opacity-90" />
           <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
             Let's discuss your project and create a custom mockup that brings
@@ -71,6 +97,8 @@ const Contact = () => {
               <h2 className="text-3xl font-heading font-bold mb-8">
                 Request Your Free Luxury Mockup
               </h2>
+
+              {/* Note: action/method are not required here because we POST via fetch */}
               <form onSubmit={handleSubmit} className="space-y-6">
                 <div>
                   <Label htmlFor="name">Name *</Label>
@@ -129,8 +157,9 @@ const Contact = () => {
                   type="submit"
                   size="lg"
                   className="w-full bg-accent hover:bg-accent/90 text-accent-foreground"
+                  disabled={loading}
                 >
-                  Send Message
+                  {loading ? "Sending..." : "Send Message"}
                 </Button>
 
                 <p className="text-xs text-muted-foreground">
@@ -229,6 +258,33 @@ const Contact = () => {
               </div>
             </div>
           </div>
+        </div>
+      </section>
+
+      <section className="py-16 bg-background">
+        <div className="container mx-auto px-6 text-center">
+          <h2 className="text-3xl md:text-4xl font-heading font-bold mb-4">
+            Financing Available
+          </h2>
+          <div className="mx-auto h-1 w-20 bg-accent rounded mb-6 opacity-90" />
+
+          <p className="text-lg text-muted-foreground mb-8 max-w-2xl mx-auto">
+            Diamond Canyon Painting offers flexible financing options through
+            Hearth to help make your project more affordable.
+          </p>
+
+          <a
+            href="https://app.gethearth.com/partners/diamond-canyon-painting-llc?utm_campaign=57189&utm_content=white&utm_medium=contractor-website&utm_source=contractor&utm_term=700x110"
+            target="_blank"
+            rel="noopener noreferrer nofollow"
+            className="inline-block"
+          >
+            <img
+              src={HearthLogo}
+              alt="Hearth Financing Banner"
+              className="w-full max-w-[700px] h-auto mx-auto rounded-md shadow-sm"
+            />
+          </a>
         </div>
       </section>
     </div>

@@ -12,6 +12,7 @@ import { Link } from "react-router-dom";
 import detailImage from "@/assets/detail-trim.jpg";
 import exteriorImage from "@/assets/exterior-luxury.jpg";
 import customFinish from "@/assets/custom-finish.jpg";
+import HearthLogo from "@/assets/HearthLogo.png";
 
 const Services = () => {
   return (
@@ -263,6 +264,34 @@ const Services = () => {
               </ul>
             </Card>
           </div>
+        </div>
+      </section>
+
+      {/* Financing */}
+      <section className="py-16 bg-background">
+        <div className="container mx-auto px-6 text-center">
+          <h2 className="text-3xl md:text-4xl font-heading font-bold mb-4">
+            Financing Available
+          </h2>
+          <div className="mx-auto h-1 w-20 bg-accent rounded mb-6 opacity-90" />
+
+          <p className="text-lg text-muted-foreground mb-8 max-w-2xl mx-auto">
+            Diamond Canyon Painting offers flexible financing options through
+            Hearth to help make your project more affordable.
+          </p>
+
+          <a
+            href="https://app.gethearth.com/partners/diamond-canyon-painting-llc?utm_campaign=57189&utm_content=white&utm_medium=contractor-website&utm_source=contractor&utm_term=700x110"
+            target="_blank"
+            rel="noopener noreferrer nofollow"
+            className="inline-block"
+          >
+            <img
+              src={HearthLogo}
+              alt="Hearth Financing Banner"
+              className="w-full max-w-[700px] h-auto mx-auto rounded-md shadow-sm"
+            />
+          </a>
         </div>
       </section>
 

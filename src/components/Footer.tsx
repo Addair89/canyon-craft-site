@@ -1,4 +1,4 @@
-import { Mail, Phone, MapPin } from "lucide-react";
+import { Mail, Phone, MapPin, CreditCard } from "lucide-react";
 import logo from "@/assets/logo.png";
 import bbbLogo from "@/assets/bbbLogo.svg";
 
@@ -68,6 +68,16 @@ const Footer = () => {
                 <MapPin className="w-4 h-4 mt-0.5" />
                 <span>Tucson & Southern Arizona</span>
               </div>
+              {/* Financing Link */}
+              <a
+                href="https://app.gethearth.com/partners/diamond-canyon-painting-llc?utm_campaign=57189&utm_content=white&utm_medium=contractor-website&utm_source=contractor&utm_term=700x110"
+                target="_blank"
+                rel="noopener noreferrer nofollow"
+                className="flex items-center gap-2 hover:text-primary-foreground transition-colors"
+              >
+                <CreditCard className="w-4 h-4" />
+                Financing Available Through Hearth
+              </a>
             </div>
           </div>
 
@@ -89,6 +99,17 @@ const Footer = () => {
           <p>
             &copy; {new Date().getFullYear()} Diamond Canyon Painting. All
             rights reserved.
+          </p>
+          <p className="mt-2">
+            Website Designed &amp; Developed by{" "}
+            <a
+              href="https://addairdesign.com"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="underline hover:text-primary-foreground"
+            >
+              AddairDesign
+            </a>
           </p>
         </div>
       </div>
