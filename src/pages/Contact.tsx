@@ -28,7 +28,7 @@ const Contact = () => {
       const payload = new FormData(form);
 
       // IMPORTANT: replace this with the real key when you get it
-      payload.append("access_key", "YOUR_ACCESS_KEY_HERE");
+      payload.append("access_key", "77dfb278-ca5a-4b02-aafe-9492ffeed9b3");
 
       const res = await fetch("https://api.web3forms.com/submit", {
         method: "POST",
